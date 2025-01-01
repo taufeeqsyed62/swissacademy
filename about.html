@@ -39,44 +39,105 @@
 
 
    
-   <!-- Navbar Start -->
+ 
+<!-- First Navbar (Logo + Heading) -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
-    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5" style="display: flex; align-items: center; padding-left: 10px; padding-right: 10px;">
-        <img src="img/LOGO NEW Cropped.jpg" alt="Klinik Logo" style="max-height: 50px; margin-right: 10px; width: auto;"> <!-- Logo Image -->
-        <h1 class="m-0 text-primary school-name">SWISS CBSE ENG. SCHOOL</h1> <!-- Text next to the logo -->
-    </a>
+    <div class="container-fluid">
+        <!-- Logo and Heading Section -->
+        <a href="index.html" class="navbar-brand d-flex align-items-center" style="padding-left: 10px; padding-right: 10px;">
+            <img src="img/LOGO NEW Cropped.jpg" alt="Klinik Logo" style="max-height: 50px; margin-right: 10px; width: auto;">
+            <h1 class="m-0 text-primary school-name">SWISS CBSE ENG. SCHOOL</h1>
+        </a>
+    </div>
+</nav>
 
-    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a href="index.html" class="nav-item nav-link active">Home</a>
-            <a href="about.html" class="nav-item nav-link">About</a>
-            <a href="appointment.html" class="nav-item nav-link">Admission</a>
-            <a href="feature.html" class="nav-item nav-link">Gallery</a>
-            <a href="team.html" class="nav-item nav-link">Mandatory Dis.</a>
-            <a href="testimonial.html" class="nav-item nav-link">Testimonial</a>
-            <a href="https://drive.google.com/drive/folders/1VMgB1io8rbchSE1gLRjBO_mRyThEw_BS?usp=drive_link" class="nav-item nav-link">Photo & Certificate</a>
-            <a href="contact.html" class="nav-item nav-link">Contact</a>
+<!-- Second Navbar (Menu) -->
+<nav class="navbar navbar-expand-lg bg-light navbar-light p-0 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <!-- Navbar Dropdown for Mobile View -->
+        <div class="dropdown d-lg-none">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a href="index.html" class="dropdown-item">Home</a></li>
+                <li><a href="about.html" class="dropdown-item">About</a></li>
+                <li><a href="appointment.html" class="dropdown-item">Admission</a></li>
+                <li><a href="feature.html" class="dropdown-item">Gallery</a></li>
+                <li><a href="team.html" class="dropdown-item">Mandatory Dis.</a></li>
+                <li><a href="testimonial.html" class="dropdown-item">Testimonial</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1VMgB1io8rbchSE1gLRjBO_mRyThEw_BS?usp=drive_link" class="dropdown-item">Photo & Certificate</a></li>
+                <li><a href="contact.html" class="dropdown-item">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Navbar Links for Larger Screens -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="appointment.html" class="nav-item nav-link">Admission</a>
+                <a href="feature.html" class="nav-item nav-link">Gallery</a>
+                <a href="team.html" class="nav-item nav-link">Mandatory Dis.</a>
+                <a href="testimonial.html" class="nav-item nav-link">Testimonial</a>
+                <a href="https://drive.google.com/drive/folders/1VMgB1io8rbchSE1gLRjBO_mRyThEw_BS?usp=drive_link" class="nav-item nav-link">Photo & Certificate</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+            </div>
         </div>
     </div>
 </nav>
-<!-- Navbar End -->
 
-<!-- Add the CSS -->
+<!-- CSS -->
 <style>
-    .school-name {
-        font-size: 0.9rem; /* Default size for mobile */
-        font-weight: bold;
-        color: #007bff;
+    /* First Navbar (Logo + Heading) */
+    .navbar-brand h1 {
+        font-size: 1.5rem;  /* Default font size for mobile */
         margin: 0;
     }
 
-    /* Larger font size for PC views */
+    /* For mobile view (default for smaller screens) */
+    @media (max-width: 991px) {
+        .navbar-nav {
+            display: flex;
+            flex-direction: column;  /* Menu options in a column on mobile */
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .nav-item {
+            margin: 5px 0; /* Space between menu items */
+        }
+    }
+
+    /* For larger screens (PC view) */
     @media (min-width: 992px) {
+        /* Move logo to leftmost corner */
+        .navbar-brand {
+            display: flex;
+            justify-content: flex-start;  /* Align items to the left */
+            width: 100%;
+        }
+
+        .navbar-brand img {
+            max-height: 75px !important;  /* Increase logo size */
+            margin-right: 30px !important;  /* Increase space between logo and heading */
+        }
+
+        .navbar-nav {
+            display: flex;
+            flex-direction: row;  /* Keep menu items in a row */
+            justify-content: center;  /* Center the items */
+            width: 100%;
+            margin-top: 0;
+        }
+
+        .nav-item {
+            margin: 0 15px; /* Space between menu items */
+        }
+
+        /* Increase heading font size */
         .school-name {
-            font-size: 2rem; /* Adjust the size as needed */
+            font-size: 4rem !important; /* Double the previous font size */
         }
     }
 </style>
